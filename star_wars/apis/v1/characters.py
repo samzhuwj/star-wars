@@ -20,4 +20,17 @@ class CharactersIndexEndpoint(KimEndpoint, DBListMixin, DBCreateMixin):
         return stmt
 
 
+class CharacterObjectEndpoint(KimEndpoint, DBObjectMixin):
+    name = 'object'
+    url = '/<string:obj_id>'
+    mapper_class = CharacterMapper
+    model = Character
+
+    def get_query(self):
+
+        stmt = db.session.query(Character)
+        return stmt
+
+
 characters_resource.add_endpoint(CharactersIndexEndpoint)
+characters_resource.add_endpoint(CharacterObjectEndpoint)
