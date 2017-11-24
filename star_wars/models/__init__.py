@@ -7,7 +7,6 @@ db = SQLAlchemy()
 
 
 class BaseMixin(object):
-
     @declared_attr
     def id(cls):
 
@@ -25,3 +24,4 @@ class BaseMixin(object):
 
 
 from .user import *
+from .character import *
