@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  api:
+    build: .
+    container_name: star_wars
+    image: star_wars
+    volumes:
+      - ../star-wars:/opt/code
+    ports:
+      - "8080:8080"
